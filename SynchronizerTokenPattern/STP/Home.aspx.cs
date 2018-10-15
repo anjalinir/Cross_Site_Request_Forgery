@@ -1,4 +1,5 @@
-﻿using System;
+﻿using STP;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,51 +12,72 @@ namespace STP
 {
     public partial class Home : System.Web.UI.Page
     {
-        private string _antiXsrfTokenValue;
-        private static Hashtable htSessions = new Hashtable();
-
-        public static Hashtable HtSession
-        {
-            get { return htSessions; }
-            set { htSessions = value; }
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                HttpCookie sessionId = HttpContext.Current.Request.Cookies.Get("Session_Id");
+            //if (!IsPostBack)
+            //{
+            //    HttpCookie sessionId = HttpContext.Current.Request.Cookies.Get("Session_Id");
 
-                _antiXsrfTokenValue = Guid.NewGuid().ToString("N");
-                htSessions.Add(sessionId, _antiXsrfTokenValue);
+            //    foreach(DictionaryEntry entry in Session_.HtSessions)
+            //    {
+            //        if(entry.Key.ToString() == sessionId.Value)
+            //        {
+            //            csrfToken = entry.Value.ToString();
 
-                hdCsrfToken.Value = _antiXsrfTokenValue;
-                Label1.Text = _antiXsrfTokenValue;
-            }
+            //            hdCsrfToken.Value = csrfToken;
+            //            Label1.Text = csrfToken;
+            //        }
+            //    }                
+            //}
         }
 
         [WebMethod]
-        public static string GetCSRFToken(string csrfToken)
+        public static string OnSubmit()
         {
-            if (HtSession != null)
-            {
-                foreach(DictionaryEntry session_ in HtSession)
-                {
-                    HttpCookie sessionId = HttpContext.Current.Request.Cookies.Get("Session_Id");
-                    if ((string)session_.Key == sessionId.ToString())
-                    {
-                        if ((string)session_.Value == csrfToken)
-                            return "Success";
-                    }
+            return "it worked";
+        }
 
-                    else
-                    {
-                        throw new Exception("Invalid Session");
-                    }
+        [WebMethod]
+        public static string GetCSRFToken()
+        {
+            string csrfToken = string.Empty;
+            HttpCookie sessionId = HttpContext.Current.Request.Cookies.Get("Session_Id");
+
+            foreach (DictionaryEntry entry in Session_.HtSessions)
+            {
+                if (entry.Key.ToString() == sessionId.Value)
+                {
+                    csrfToken = entry.Value.ToString();
+                    return csrfToken;                   
                 }
             }
 
-            return null;
+            throw new Exception("Invalid Session");
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (Session_.HtSessions != null)
+            {
+                foreach (DictionaryEntry session in Session_.HtSessions)
+                {
+                    HttpCookie current_ssid = HttpContext.Current.Request.Cookies.Get("Session_Id");
+                    string current_csrf = hdCsrfToken.Value;
+
+                    if ((string)session.Key == current_ssid.Value.ToString())
+                    {
+                        if ((string)session.Value == current_csrf)
+                        {
+                            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Success!');", true);
+                        }
+
+                        else
+                        {
+                            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Fail!');", true);
+                        }                            
+                    }
+                }
+            }
         }
     }
 }

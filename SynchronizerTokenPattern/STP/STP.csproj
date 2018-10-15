@@ -72,6 +72,11 @@
     <Content Include="Resources\css\site.css" />
     <Content Include="Resources\css\_all.css" />
     <Content Include="Resources\images\rightarrow.png" />
+    <Content Include="Resources\images\tree-logo.jpg" />
+    <Content Include="Resources\scripts\bootstrapJs.js" />
+    <Content Include="Resources\scripts\jquery.deferral.capture.js" />
+    <Content Include="Resources\scripts\jquery.js" />
+    <Content Include="Resources\scripts\modernizr-2.7.2.js" />
     <Content Include="Resources\scripts\Validation.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -91,6 +96,7 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session_.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">

@@ -346,7 +346,7 @@ position:absolute; top:0; float:none; padding:0; display:block !important; visib
 
 .green-btn{
 	display:inline-block;
-	background:url(../../resources/images/ico-arrow.png) no-repeat right center #96C03A;
+	background:url(../../resources/images/ico-arrow.png) no-repeat right center #00cc99;
 	border:none;
 	padding:8px 32px 7px 10px;
 	text-transform:uppercase;
@@ -3470,7 +3470,7 @@ input[type=radio] {
 
 input[type=submit] {
               width: auto !important;
-              background-color: #96C03A;
+              background-color: #00cc99;
               background-image: url(/STP/Resources/images/rightarrow.png);
               background-position: right center;
               background-repeat: no-repeat;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using STP;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,8 @@ namespace STP
     public partial class Login : System.Web.UI.Page
     {
         private const string SessionCookie = "_SessionCookie";
-               
+        //Session_ session_ = new Session_();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             divFail.Visible = false;
@@ -34,6 +36,11 @@ namespace STP
                 HttpCookie sessionCookie = new HttpCookie("Session_Id");
                 sessionCookie.Value = sessionId;
                 Response.Cookies.Add(sessionCookie);
+
+                Session_.SessionCookie = sessionCookie;
+                Session_._AntiXsrfTokenValue = Guid.NewGuid().ToString("N");
+                Session_.HtSessions.Add(sessionId, Session_._AntiXsrfTokenValue);
+
                 Response.Redirect("Home.aspx");
 
 

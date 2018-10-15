@@ -37,23 +37,30 @@
             </div>
         </div>
     </header>
-    <form id="main" runat="server" method="post" class="custom_border">
-
-        @Html.AntiForgeryToken()
-
+    <form id="main" runat="server" method="post">
         <main id="content" role="main">
             <div class="container">
                 <div class="sl-article-section">
                     <div class="row section top-buffer">
 
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4 center">
+                            <h1 style="color:#00827b; font-family:'Calisto MT'">Greenland State Bank</h1>
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                         </div>
                     </div>
+
+                    <div class="row section top-buffer">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4 center">
+                            <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Resources/images/tree-logo.jpg"/>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                    
 
                     <div class="row section top-buffer">
                         <div class="col-md-4"></div>
@@ -88,7 +95,7 @@
                         <div class="col-md-4"></div>
                         <div class="col-md-4 customText">
                             <div>
-                                <asp:TextBox ID="txtPassword" runat="server" class="form-control"></asp:TextBox>
+                                <asp:TextBox ID="txtPassword" runat="server" class="form-control" TextMode="Password"></asp:TextBox>
                                 <div id="divFail" class="alert alert-danger center top-buffer" runat="server" visible="False">
                                     <asp:Label ID="lblFail" runat="server" Visible="False" Text="" Font-Size=""></asp:Label>
                                 </div>

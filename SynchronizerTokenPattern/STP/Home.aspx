@@ -18,8 +18,30 @@
     <link href="Resources/css/site.css" type="text/css" rel="stylesheet" />
     
     <script src="Resources/scripts/Validation.js" type="text/javascript"></script>
+    <script src="Resources/scripts/jquery.deferral.capture.js" type="text/javascript"></script>
+    <script src="Resources/scripts/modernizr-2.7.2.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 </head>
-<body>
+<body onload="submit()">
+    <script>
+        function submit() {
+            $.ajax({
+                type: "POST",
+                url: "Home.aspx/GetCSRFToken",
+                data: JSON.stringify({}),
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                success: function (response) {
+                    alert("Valid Session");
+                    myResponse = response.d.responseText;
+                    alert(myResponse);
+                },
+                error: function (xhr, status, error) {
+                    alert("Error");
+                }
+            });
+        }        
+    </script>
     <header role="banner">
         <div id="jquery-window-resize">
             <div class="row">
@@ -38,7 +60,7 @@
             </div>
         </div>
     </header>
-    <form id="main" runat="server" method="post" class="custom_border">
+    <form id="main" runat="server" method="POST" class="custom_border">
         <main id="content" role="main">
             <div class="container">
                 <div class="sl-article-section">
@@ -60,7 +82,7 @@
                         <div class="col-md-4">
                         </div>
                         <div class="col-md-4">
-                            <asp:Button ID="btnSubmit" runat="server" Text="Click Me" BorderWidth="0px" OnClientClick="return GetToken()" />
+                            <asp:Button ID="btnSubmit" runat="server" Text="Click Me" BorderWidth="0px" OnClick="btnSubmit_Click" />
                         </div>
 
                         <div class="col-md-4">

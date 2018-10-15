@@ -658,7 +658,7 @@ text-align: center; vertical-align: middle; color: #fff; font-size: 12px; line-h
 
 .brochure-block h2{ color:#873e8d; font-size:32px; line-height:38px; text-transform:uppercase;}
 .brochure-block h2 span{ font-weight:normal;}
-.brochure-block .green-btn{background:url(/content/images/download-link-bg.png) no-repeat right center #96C03A; 
+.brochure-block .green-btn{background:url(/content/images/download-link-bg.png) no-repeat right center #00cc99; 
 background-position:bottom 10px right 0!important;}
 .brochure-block .green-btn:hover,.brochure-block .green-btn:focus{background:url(/content/images/download-link-bg.png) no-repeat right center #BAD27A; background-position:bottom 10px right 0!important;}
 .brochure-block .green-btn:active{background:url(/content/images/download-link-bg.png) no-repeat right center #369B30; background-position:bottom 10px right 0!important;}
