@@ -22,9 +22,9 @@
     <script src="Resources/scripts/modernizr-2.7.2.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 </head>
-<body onload="submit()">
+<body onload="load()">
     <script>
-        function submit() {
+        function load() {
             $.ajax({
                 type: "POST",
                 url: "Home.aspx/GetCSRFToken",
@@ -32,12 +32,10 @@
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 success: function (response) {
-                    alert("Valid Session");
-                    myResponse = response.d.responseText;
-                    alert(myResponse);
+                    document.getElementById("hdCsrfToken").value = response.d.responseText;
                 },
                 error: function (xhr, status, error) {
-                    alert("Error");
+                    alert("Invalid Session");
                 }
             });
         }        

@@ -29,10 +29,7 @@ namespace STP
             {
                 SessionIDManager manager = new SessionIDManager();
                 string sessionId = manager.CreateSessionID(HttpContext.Current);
-
-                ///testing..................
-                ///
-
+                
                 HttpCookie sessionCookie = new HttpCookie("Session_Id");
                 sessionCookie.Value = sessionId;
                 Response.Cookies.Add(sessionCookie);

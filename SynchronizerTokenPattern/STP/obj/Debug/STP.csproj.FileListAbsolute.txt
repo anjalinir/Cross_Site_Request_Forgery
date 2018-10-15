@@ -3,3 +3,8 @@ D:\Academic\4th year\2nd_Sem\SSD\Assignments\Assignment1\STP\STP\bin\STP.dll
 D:\Academic\4th year\2nd_Sem\SSD\Assignments\Assignment1\STP\STP\bin\STP.pdb
 D:\Academic\4th year\2nd_Sem\SSD\Assignments\Assignment1\STP\STP\obj\Debug\STP.dll
 D:\Academic\4th year\2nd_Sem\SSD\Assignments\Assignment1\STP\STP\obj\Debug\STP.pdb
+D:\Academic\4th year\2nd_Sem\SSD\Assignments\Assignment1\GitHub\Cross_Site_Request_Forgery\SynchronizerTokenPattern\STP\bin\STP.dll.config
+D:\Academic\4th year\2nd_Sem\SSD\Assignments\Assignment1\GitHub\Cross_Site_Request_Forgery\SynchronizerTokenPattern\STP\bin\STP.dll
+D:\Academic\4th year\2nd_Sem\SSD\Assignments\Assignment1\GitHub\Cross_Site_Request_Forgery\SynchronizerTokenPattern\STP\bin\STP.pdb
+D:\Academic\4th year\2nd_Sem\SSD\Assignments\Assignment1\GitHub\Cross_Site_Request_Forgery\SynchronizerTokenPattern\STP\obj\Debug\STP.dll
+D:\Academic\4th year\2nd_Sem\SSD\Assignments\Assignment1\GitHub\Cross_Site_Request_Forgery\SynchronizerTokenPattern\STP\obj\Debug\STP.pdb

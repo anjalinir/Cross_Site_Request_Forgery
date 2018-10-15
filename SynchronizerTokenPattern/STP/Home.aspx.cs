@@ -32,12 +32,6 @@ namespace STP
         }
 
         [WebMethod]
-        public static string OnSubmit()
-        {
-            return "it worked";
-        }
-
-        [WebMethod]
         public static string GetCSRFToken()
         {
             string csrfToken = string.Empty;
