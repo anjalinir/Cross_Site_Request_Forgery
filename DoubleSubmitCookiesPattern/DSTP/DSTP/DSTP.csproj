@@ -41,6 +41,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -59,10 +62,31 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Resources\css\additions.css" />
+    <Content Include="Resources\css\bootstrap.min.css" />
+    <Content Include="Resources\css\main.css" />
+    <Content Include="Resources\css\media-queries.css" />
+    <Content Include="Resources\css\site.css" />
+    <Content Include="Resources\css\_all.css" />
+    <Content Include="Resources\images\rightarrow.png" />
+    <Content Include="Resources\images\tree-logo.jpg" />
+    <Content Include="Resources\scripts\bootstrapJs.js" />
+    <Content Include="Resources\scripts\jquery.deferral.capture.js" />
+    <Content Include="Resources\scripts\jquery.js" />
+    <Content Include="Resources\scripts\modernizr-2.7.2.js" />
+    <Content Include="Resources\scripts\Validation.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
