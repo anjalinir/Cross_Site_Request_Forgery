@@ -30,9 +30,11 @@
                 url: "Home.aspx/GetCSRFToken",
                 data: JSON.stringify({}),
                 contentType: 'application/json; charset=utf-8',
-                dataType: 'json',
+                dataType: 'text',
+                async: true,
                 success: function (response) {
-                    document.getElementById("hdCsrfToken").value = response.d.responseText;
+                    var csrf = response;
+                    document.getElementById("hdCsrfToken").value = csrf;
                 },
                 error: function (xhr, status, error) {
                     alert("Invalid Session");
@@ -65,7 +67,6 @@
                     <div class="row section top-buffer">
 
                         <div class="col-md-4">
-                            <asp:Label ID="Label1" runat="server" Text="ads"></asp:Label>
                         </div>
                         <div class="col-md-4">
                             <asp:HiddenField ID="hdCsrfToken" runat="server" Value="" />

@@ -57,6 +57,8 @@ namespace STP
                 {
                     HttpCookie current_ssid = HttpContext.Current.Request.Cookies.Get("Session_Id");
                     string current_csrf = hdCsrfToken.Value;
+                    current_csrf = current_csrf.Replace("\"}", "");
+                    current_csrf = current_csrf.Replace("{\"d\":\"", "");
 
                     if ((string)session.Key == current_ssid.Value.ToString())
                     {

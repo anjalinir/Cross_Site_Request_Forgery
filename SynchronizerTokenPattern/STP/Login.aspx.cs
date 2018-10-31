@@ -39,21 +39,6 @@ namespace STP
                 Session_.HtSessions.Add(sessionId, Session_._AntiXsrfTokenValue);
 
                 Response.Redirect("Home.aspx");
-
-
-                //HttpCookie sessionCookie = new HttpCookie("sessionID", SessionCookie);
-                //sessionCookie.Value = sessionId;
-                //HttpCookie userCookie = new HttpCookie("username", txtUsername.Text);
-                //sessionCookie.Value = sessionId;
-                ////////////
-                //Response.AddHeader("username", txtUsername.Text);
-                //Response.AddHeader("sessionID", sessionId);
-                
-                //_antiXsrfTokenValue = Guid.NewGuid().ToString("N");
-
-                //htSessions.Add(sessionId, _antiXsrfTokenValue);
-                
-                //Response.Redirect("Home.aspx");
             }
 
             else
